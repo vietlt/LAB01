@@ -13,13 +13,6 @@ pipeline {
     }
 
     stages {
-        stage("Build") {
-            steps {
-                sh '''
-                    docker build -t vietlt215/Angular-app .
-                '''
-            }
-        }
         stage('Init Provider') {
             steps {
                 sh 'terraform init'

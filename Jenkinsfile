@@ -1,4 +1,9 @@
 pipeline {
+    
+    tools {
+    terraform 'terraform'
+    }
+    
     agent {
         label params.AGENT == "any" ? "" : params.AGENT 
     }

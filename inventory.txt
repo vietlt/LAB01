@@ -1,0 +1,2 @@
+Ubuntu ansible_host=13.213.69.122 ansible_connection=ssh ansible_user=ubuntu ansible_ssh_private_key_file=terraform-key-pair.pem
+Windows ansible_host=13.214.142.203 ansible_connection=winrm ansible_user=administrator ansible_winrm_server_cert_validation=ignore ansible_password=KUrZzO-L4qfl9Rrsq8jjL)cC;X.CH0Dg

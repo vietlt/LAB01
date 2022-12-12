@@ -22,7 +22,6 @@ pipeline {
         stage("Ansible"){
             steps {
                 sh '''
-                    killall apt apt-get
                     
                     apt-get install -y python3-pip
 

@@ -11,7 +11,7 @@
 - name: Install docker for Ubuntu 
   become: true
   become_method: "sudo"
-  command: "pwd && apt install curl && curl https://get.docker.com -o get-docker.sh && sh ./get-docker.sh"
+  command: "apt install curl && curl https://get.docker.com -o get-docker.sh && sh ./get-docker.sh"
   when: ansible_distribution == 'Ubuntu'
 
 

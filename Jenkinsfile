@@ -24,8 +24,6 @@ pipeline {
                 sh '''
                     apt-get install -y python3-pip
 
-                    ln -s /usr/bin/python3 python
-
                     pip3 install --upgrade pip
 
                     python3 -V

@@ -1,5 +1,5 @@
 # Use an official HashiCorp Terraform runtime as a base image.
-FROM ubuntu:alpine as builder
+FROM ubuntu as builder
 WORKDIR /infra
 COPY . .
 

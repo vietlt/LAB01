@@ -23,7 +23,7 @@ pipeline {
             steps {
                 sh '''
                     
-                    apt-get install -y python3-pip
+                    sudo apt-get install -y python3-pip
 
                     pip3 install --upgrade pip
 
@@ -35,7 +35,7 @@ pipeline {
 
                     pip3 install ansible
                     
-                    chmod 400 terraform-key-pair.pem
+                    sudo chmod 400 terraform-key-pair.pem
                 '''
             }
         }

@@ -42,7 +42,7 @@ pipeline {
         stage("Build") {
             steps {
                 sh '''
-                    docker build -t vietlt215/angular-app .
+                    sudo docker build -t vietlt215/angular-app .
                 '''
             }
         }

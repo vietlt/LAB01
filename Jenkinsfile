@@ -19,6 +19,25 @@ pipeline {
     }
 
     stages {
+        stage("Ansible"){
+            steps {
+                sh '''
+                    apt-get install -y python3-pip
+
+                    ln -s /usr/bin/python3 python
+
+                    pip3 install --upgrade pip
+
+                    python3 -V
+
+                    pip --version
+
+                    pip3 install pywinrm && \
+
+                    pip3 install ansible
+                '''
+            }
+        }
 //         stage("Build") {
 //             steps {
 //                 sh '''

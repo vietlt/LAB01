@@ -11,7 +11,7 @@
 - name: Install docker for Ubuntu 
   become: true
   become_method: "sudo"
-  command: "apt install docker.io -y && sudo snap install docker"
+  command: "apt-get install docker.io -y && sudo snap install docker"
   when: ansible_distribution == 'Ubuntu'
 
 

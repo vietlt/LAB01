@@ -61,7 +61,7 @@ pipeline {
                 message "Do you want to proceed for production deployment?"
             }
             steps {
-                sh 'terraform apply "tfplan" -auto-approve'
+                sh 'terraform apply "tfplan"'
             }
         }
     }

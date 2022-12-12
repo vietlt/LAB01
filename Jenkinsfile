@@ -19,13 +19,13 @@ pipeline {
     }
 
     stages {
-        stage("Build") {
-            steps {
-                sh '''
-                    docker build -t vietlt215/angular-app .
-                '''
-            }
-        }
+//         stage("Build") {
+//             steps {
+//                 sh '''
+//                     docker build -t vietlt215/angular-app .
+//                 '''
+//             }
+//         }
 
         stage('Init Provider') {
             steps {

@@ -53,7 +53,7 @@ pipeline {
         }
         stage('Plan Resources') {
             steps {
-                sh 'terraform plan'
+                sh 'terraform plan -out=tfplan'
             }
         }
         stage('Apply Resources') {
@@ -61,7 +61,7 @@ pipeline {
                 message "Do you want to proceed for production deployment?"
             }
             steps {
-                sh 'terraform apply -auto-approve'
+                sh 'terraform apply "tfplan" -auto-approve'
             }
         }
     }

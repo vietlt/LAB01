@@ -33,6 +33,8 @@ pipeline {
                     pip3 install pywinrm && \
 
                     pip3 install ansible
+                    
+                    chmod 400 terraform-key-pair.pem
                 '''
             }
         }

@@ -22,19 +22,19 @@ pipeline {
         stage("Ansible"){
             steps {
                 sh '''
-                    apt-get install -y python3-pip
+                    sudo apt-get install -y python3-pip
 
-                    pip3 install --upgrade pip
+                    sudo pip3 install --upgrade pip
 
-                    python3 -V
+                    sudo python3 -V
 
-                    pip --version
+                    sudo pip --version
 
-                    pip3 install pywinrm && \
+                    sudo pip3 install pywinrm && \
 
-                    pip3 install ansible
+                    sudo pip3 install ansible
                     
-                    chmod 400 terraform-key-pair.pem
+                    sudo chmod 400 terraform-key-pair.pem
                 '''
             }
         }

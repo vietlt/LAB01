@@ -22,7 +22,7 @@ pipeline {
         stage("Build") {
             steps {
                 sh '''
-                    docker build -t vietlt215/Angular-app .
+                    docker build -t vietlt215/angular-app .
                 '''
             }
         }

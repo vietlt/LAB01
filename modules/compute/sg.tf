@@ -29,16 +29,8 @@ resource "aws_security_group" "allow_all" {
   }
 
   ingress {
-    description = "Allow 5985"
+    description = "Allow 5985 and 5986"
     from_port   = 5985
-    to_port     = 5985
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  ingress {
-    description = "Allow 5986"
-    from_port   = 5986
     to_port     = 5986
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]

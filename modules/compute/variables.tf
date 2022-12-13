@@ -1,25 +1,16 @@
 variable "ami_linux" {
-
   type = string
-
   default = "ami-02045ebddb047018b"
-
 }
 
 variable "ami_windows" {
-
   type = string
-
   default = "ami-0f31f1436e5d6bb74"
-
 }
 
 variable "instance_type" {
-
   type = string
-
   default = "t2.small"
-
 }
 
 variable "generated_key_name" {
@@ -29,17 +20,10 @@ variable "generated_key_name" {
 } 
 
 variable "vpc_id_param" {
-  
 }
 
-# variable "admin_password" {
-  
-# }
-
 variable "linux_subnet_id_param" {
-  
 }
 
 variable "windows_subnet_id_param" {
-  # type        = string
 }

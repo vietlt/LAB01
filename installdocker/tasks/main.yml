@@ -1,19 +1,61 @@
 ---
 # tasks file for installdocker
-- name: Update all Ubuntu packages 
+- name: Install aptitude
   become: true
   become_method: "sudo"
   apt:
-    upgrade: "dist"
+    name: aptitude
+    state: latest
     update_cache: true
   when: ansible_distribution == 'Ubuntu'
 
-- name: Install docker for Ubuntu 
+- name: Install required system packages
   become: true
   become_method: "sudo"
-  command: "pwd && apt install curl && curl https://get.docker.com -o get-docker.sh && sh ./get-docker.sh"
+  apt:
+    pkg:
+    - apt-transport-https
+    - ca-certificates
+    - curl
+    - software-properties-common
+    - python3-pip
+    - virtualenv
+    - python3-setuptools
+    state: latest
+    update_cache: true
   when: ansible_distribution == 'Ubuntu'
 
+- name: Add Docker GPG apt Key
+  become: true
+  become_method: "sudo"
+  apt_key:
+    url: https://download.docker.com/linux/ubuntu/gpg
+    state: present
+  when: ansible_distribution == 'Ubuntu'
+
+- name: Add Docker Repository
+  become: true
+  become_method: "sudo"
+  apt_repository:
+    repo: deb https://download.docker.com/linux/ubuntu focal stable
+    state: present
+  when: ansible_distribution == 'Ubuntu'
+
+- name: Update apt and install docker-ce
+  become: true
+  become_method: "sudo"
+  apt:
+    name: docker-ce
+    state: latest
+    update_cache: true
+  when: ansible_distribution == 'Ubuntu'
+
+- name: Install Docker Module for Python
+  become: true
+  become_method: "sudo"
+  pip:
+    name: docker
+  when: ansible_distribution == 'Ubuntu'
 
 - name: Deploy docker app for Ubuntu 
   become: true

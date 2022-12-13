@@ -9,9 +9,9 @@ terraform {
 
 terraform {
   backend "s3" {
-    bucket         = "lab01-bucket"
-    key            = "terraform.tfstate"
-    region         = "ap-southeast-1"
+    bucket = "lab01-bucket"
+    key    = "terraform.tfstate"
+    region = "ap-southeast-1"
   }
 }
 

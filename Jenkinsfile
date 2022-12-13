@@ -10,7 +10,7 @@ pipeline {
     }
 
     parameters {
-        choice(name: "AGENT", choices: ["any", "docker", "windows", "linux"]) 
+        choice(name: "AGENT", choices: ["any", "spot-fleet"]) 
     }
 
     environment {
